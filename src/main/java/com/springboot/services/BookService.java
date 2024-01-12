@@ -36,6 +36,7 @@ public class BookService {
     public Book addBook(Book b)
     {
         list.add(b);
+        return b;
     }
     //Deleting Book
     public void deleteBook(int bid)
