@@ -15,6 +15,7 @@ public class controller {
 
     @GetMapping("/books")
     public List<Book> getBooks() {
+
         return this.bookService.getALlBooks();
     }
 
@@ -35,5 +36,12 @@ public class controller {
     public void deleteBook(@PathVariable ("bookId") int bookId)
     {
         this.bookService.deleteBook(bookId);
+    }
+
+    @PutMapping("book/{bookId}")
+    public Book updateBook(@RequestBody Book book,@PathVariable("bookId") int bookId)
+    {
+        this.bookService.updateBook(book,bookId);
+        return book;
     }
 }
